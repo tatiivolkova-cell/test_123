@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Прогресс уровня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="module" id="progressModule">
+
+  <div class="ring-wrap">
+    <div class="range-labels">
+      <span>60 К</span>
+      <span>120К</span>
+    </div>
+
+    <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="#E8F0FE" stroke-width="3"></line>
+        </pattern>
+      </defs>
+      <circle class="ring-track" cx="100" cy="100" r="84"></circle>
+      <circle class="ring-progress" cx="100" cy="100" r="84"></circle>
+    </svg>
+
+    <div class="avatar">
+      <img src="assets/avatar.png" alt="Фото сотрудника">
+    </div>
+  </div>
+
+  <div class="score-row">
+    <span class="score">60 767</span>
+    <span class="rating">
+      <img src="assets/star.svg" alt="" class="star-icon">
+      <span>3</span>
+    </span>
+  </div>
+
+  <h2 class="name">Свистаплюевич Ефросений Николаевич</h2>
+
+  <div class="meta">
+    <p>Старший программист</p>
+    <p>Отдел интернет-проектов</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

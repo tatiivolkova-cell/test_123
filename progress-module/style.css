@@ -1,0 +1,169 @@
+:root {
+  --color-text: #524E4E;
+  --color-text-muted: #BDB9B8;
+  --color-progress: #73A6F9;
+  --color-avatar-ring: #E9E8E7;
+  --font: 'Manrope', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F4F4F5;
+  font-family: var(--font);
+  padding: 40px 16px;
+}
+
+.module {
+  width: 100%;
+  max-width: 434px;
+  background: #FFFFFF;
+  border-radius: 40px;
+  padding: 20px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 20px 60px rgba(82, 78, 78, 0.08);
+}
+
+/* --- кольцо прогресса --- */
+
+.ring-wrap {
+  position: relative;
+  width: 100%;
+  height: 229px;
+  overflow: hidden;
+}
+
+.range-labels {
+  position: absolute;
+  top: 41px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 309px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--color-text-muted);
+}
+
+.ring {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 321px;
+  height: 321px;
+}
+
+.ring-track,
+.ring-progress {
+  fill: none;
+  stroke-linecap: round;
+  transform: rotate(150deg);
+  transform-origin: 100px 100px;
+}
+
+.ring-track {
+  stroke: url(#hatch);
+  stroke-width: 24;
+  stroke-dasharray: 395.84 131.95;
+}
+
+.ring-progress {
+  stroke: var(--color-progress);
+  stroke-width: 24;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.module.is-ready .ring-progress {
+  stroke-dashoffset: 0;
+}
+
+.avatar {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--color-avatar-ring);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- баллы и рейтинг --- */
+
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.score {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.star-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- имя и должность --- */
+
+.name {
+  margin: 0;
+  padding: 0 16px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.meta {
+  padding: 0 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.meta p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--color-text-muted);
+}
